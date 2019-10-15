@@ -78,12 +78,14 @@ C. Backdoor (後門程式)
 D. Rootkit
 ```
 ```
-116. Which of the following would a former employee most likely plant on a server before leaving
-to cause disruption to the network?
-A. Worm
-B. Logic bomb
-C. Trojan
-D. Virus
+116. Which of the following(下列) would(將) a former(前) employee(雇員) most(最) likely(可能的) plant on(安裝) a server(伺服器) before(之前) leaving(離開)
+to cause(引起) disruption(破壞) to the network(網路)?
+前僱員最有可能在離開前在服務器上安裝以下哪項？
+造成網絡中斷？
+A. Worm(電腦蠕蟲)(幾乎都對網路有害)
+B. Logic bomb(邏輯炸彈)
+C. Trojan(木馬)
+D. Virus(病毒)
 ```
 ```
 117. A SYN flood is a DoS attack in which an attacker deliberately violates the three-way
