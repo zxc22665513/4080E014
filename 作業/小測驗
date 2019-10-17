@@ -9,6 +9,12 @@ print("abc"+"def")
 word = "art"
 print(word.replace("r", "n"))
 ```
+答案:
+hello!
+89.4
+abcdef
+ant
+```
 
 
 ```
@@ -20,6 +26,9 @@ print(a, "/", b, "=", c)
 add = str(a)+"/"+str(b)+"="+str(c)
 print(add)
 ```
+答案:
+1 / 2 = 0.5
+1/2=0.5
 
 
 ```
@@ -27,7 +36,9 @@ print(add)
 input("Where do you live? ")
 print("I live in Boston. ")
 ```
-
+答案:
+Where do you live? 台南市
+I live in Boston. 
 ```
 # 10-4
 user_place = input("Where do you live? ")
@@ -35,7 +46,10 @@ text = user_place.capitalize()+ "!"
 print(text) 
 print("I hear it's nice there!") 
 ```
-
+答案:
+Where do you live? 台南市
+台南市!
+I hear it's nice there!
 
 ```
 # 10-5
