@@ -56,11 +56,11 @@ while index < len(names):
     index = index + 1
     
 (A)len(names)=2  
-(B)names[1]是 龍 
+(B)names[1]是 龍    //names[1]是 聖
 (C)程式執行完後,index最後為2
-(D)如果把條件改成 index > len(names),中index最後為2
+(D)如果把條件改成 index > len(names),中index最後為2   //inames=0
 ```
-(A)(B)(C)(D)
+(B)(D)
 龍
 聖
 ```
