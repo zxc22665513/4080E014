@@ -1,26 +1,49 @@
 # 程式閱讀題
 ```
-1.print("3*2*(17-2)")會印出甚麼結果:
+1.print("3*2*(17-2)")會印出甚麼結果://""列印字串
 (A)0   (B)90  (C)出現錯誤,無法印出  (D)3*2*(17-2)
+```
+(D)
+3*2*(17-2)
+```
 
-2.print(3*2*(17-2))會印出甚麼結果:
+2.print(3*2*(17-2))會印出甚麼結果:列印計算結果
 (A)0   (B)90  (C)出現錯誤,無法印出  (D)3*2*(17-2)
+```
+(B)
+90
+```
 
-3.print("abc""+""def")會印出甚麼結果:
+3.print("abc""+""def")會印出甚麼結果://列印字串
 (A)出現錯誤,無法印出   (B)abc+def  (C)abc""+""def  (D)abcdef
+```
+(B)
+abc+def
+```
 
-4.print("abc"+"def")會印出甚麼結果:
+4.print("abc"+"def")會印出甚麼結果://列印字串加字串
 (A)出現錯誤,無法印出   (B)abc+def  (C)abc""+""def  (D)abcdef
-
-5.底下程式執行後結果為何?
+```
+(D)
+abcdef
+```
+5.底下程式執行後結果為何?//把arttarataaa的a改3個z
 word = "arttarataaa"
 print(word.replace("a", "z",3))
 (A)出現錯誤,無法印出   (B)arttarataaa  (C)zrttzrztaaa (D)zrttzrztzzz
+```
+(C)
+zrttzrztaaa
+```
 
-6.底下程式執行後結果為何?
+6.底下程式執行後結果為何?//把arttarataaa的a改成z
 word = "arttarataaa"
 print(word.replace("a", "z"))
 (A)出現錯誤,無法印出   (B)arttarataaa  (C)zrttzrztaaa (D)zrttzrztzzz
+```
+(D)
+zrttzrztzzz
+```
 
 7根據底下程式,下列敘述何者為非?[複選題]
 
@@ -36,6 +59,11 @@ while index < len(names):
 (B)names[1]是 龍 
 (C)程式執行完後,index最後為2
 (D)如果把條件改成 index > len(names),中index最後為2
+```
+(A)(B)(C)(D)
+龍
+聖
+```
 ```
 # 程式設計題
 ```
