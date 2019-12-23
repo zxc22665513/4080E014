@@ -1,0 +1,1697 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Pmdcython_CTF_1_Encode_and_decode.ipynb",
+      "version": "0.3.2",
+      "provenance": [],
+      "collapsed_sections": [],
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python2",
+      "display_name": "Python 2"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/MyDearGreatTeacher/CS4high/blob/master/Pmdcython_CTF_1_Encode_and_decode.ipynb\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "qrBh3frvE7WG",
+        "colab_type": "text"
+      },
+      "source": [
+        "# Python實戰 CTF"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "ZlqCmc4L8N5e",
+        "colab_type": "text"
+      },
+      "source": [
+        "# jkljslkajasljd\n",
+        "\n",
+        "## dsxdfsad\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "fu7pOxjd8Voz",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        ""
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "Osk3GysF8Nya",
+        "colab_type": "text"
+      },
+      "source": [
+        ""
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "1T05LDmVq5kX",
+        "colab_type": "text"
+      },
+      "source": [
+        "# 編碼與解碼101"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "0oe1-dYkrFQx",
+        "colab_type": "text"
+      },
+      "source": [
+        "## ASCII Code--- Python"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "DdKWruS1oN1Q",
+        "colab_type": "text"
+      },
+      "source": [
+        "### Python Built in Functions(內建的函數):chr()與ord\n",
+        "\n",
+        "https://docs.python.org/3/library/functions.html\n",
+        "\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "Yay9OBxzjzDj",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "chr(97)"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "WLDgbXZnMH8U",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "chr(66)"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "rnnFoD_Mj2Np",
+        "colab_type": "code",
+        "outputId": "cfde4fcf-ad25-46bf-90a3-9015c9d7a119",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        }
+      },
+      "source": [
+        "#ord('a')\n",
+        "#print(bin(ord('a')))\n",
+        "#oct(ord('a'))\n",
+        "#print(hex(ord('a')))"
+      ],
+      "execution_count": 5,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "0x61\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "YAYZcHz1n7_Q",
+        "colab_type": "text"
+      },
+      "source": [
+        "### 編碼與解碼 101     ASCII"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "ppn-3E6Ov6le",
+        "colab_type": "code",
+        "outputId": "dc51ccdb-1f8e-4c38-acc9-d0b14b3c1aae",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        }
+      },
+      "source": [
+        "a=\"66 114\".split(\" \")\n",
+        "a"
+      ],
+      "execution_count": 7,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "['66', '114']"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 7
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "BQuKD36Gv2YN",
+        "colab_type": "code",
+        "outputId": "129cc1da-b732-44fe-ed5e-83b654945115",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        }
+      },
+      "source": [
+        "a=\"66 114\".split(\"  \")\n",
+        "a"
+      ],
+      "execution_count": 0,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "['66 114']"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 8
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "SDlvqKRprVii",
+        "colab_type": "code",
+        "outputId": "2577e0a2-5a49-40bf-8cb0-acb5e00ff757",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        }
+      },
+      "source": [
+        "a=\"66 114\".split(\" \")\n",
+        "a"
+      ],
+      "execution_count": 0,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "['66', '114']"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 7
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "KiJRsR82wS-w",
+        "colab_type": "text"
+      },
+      "source": [
+        "why int(x)???\n",
+        "\n",
+        "split(\" \")???????????"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "IsXQodmYn-hU",
+        "colab_type": "code",
+        "outputId": "8abce363-82ad-4910-f0ba-84b7d571f155",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 35
+        }
+      },
+      "source": [
+        "a=\"66 114\".split(\" \")\n",
+        "\n",
+        "result=''\n",
+        "\n",
+        "for x in a:\n",
+        "#  print(chr(int(x)))\n",
+        "  y=chr(int(x))\n",
+        "#  y\n",
+        "  result += y\n",
+        "# result = result + y \n",
+        "result"
+      ],
+      "execution_count": 8,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "'Br'"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 8
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "EYLxFnsHrL1T",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "#!/usr/bin/python\n",
+        "\n",
+        "c = '66 114 101 97 107 65 76 76 67 84 70 123 65 109 118 48 117 68 121 101 114 118 80 116 109 86 114 57 83 83 83 75 125'\n",
+        "\n",
+        "flag = \"\"\n",
+        "\n",
+        "for _ in c.split(' '):\n",
+        "  flag += chr(int(_))\n",
+        "\n",
+        "print(flag)"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "P3OpzCtYwrIK",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "#!/usr/bin/python\n",
+        "\n",
+        "c = '66 114 101 97 107 65 76 76 67 84 70 123 65 109 118 48 117 68 121 101 114 118 80 116 109 86 114 57 83 83 83 75 125'\n",
+        "\n",
+        "flag = \"\"\n",
+        "\n",
+        "for x in c.split(' '):\n",
+        "  flag += chr(int(x))\n",
+        "\n",
+        "print(flag)"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "k4mPqWCAA78d",
+        "colab_type": "text"
+      },
+      "source": [
+        "### 自己的CTF自己出:\n",
+        "\n",
+        "答案是BreakAllCTF{HappyPythonDay!A-LO_HA}\n",
+        "\n",
+        "BreakALLCTF{HappyPythonDay}\n",
+        "\n",
+        "請提供數字要學員解答"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "0aBqptaube0H",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "s = 'BreakALLCTF{HappyPythonDay}'\n",
+        "\n",
+        "#result = ''\n",
+        "for _ in s:\n",
+        "#  result += ord(_)\n",
+        "#  result\n",
+        "  print(ord(_))"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "-QwOpXU4ej_K",
+        "colab_type": "text"
+      },
+      "source": [
+        "### 答案要以二進位(bin)八進位(oct)十六進位(hex)表示"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "Zpyqy_zecDTT",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "s = 'BreakALLCTF{HappyPythonDay}'\n",
+        "\n",
+        "#result = ''\n",
+        "for _ in s:\n",
+        "#  result += ord(_)\n",
+        "#  result\n",
+        "  print(bin(ord(_)))\n",
+        "#print(oct(ord(_)))\n",
+        "#print(hex(ord(_)))"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "dyigbFaYcbyT",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "#!/usr/bin/python\n",
+        "import base64\n",
+        "\n",
+        "c = '0b1000010 0b1110010 0b1100101 0b1100001 0b1101011 0b1000001 0b1001100 0b1001100 0b1000011 0b1010100 0b1000110 0b1111011 0b1001000 0b1100001 0b1110000 0b1110000 0b1111001 0b1010000 0b1111001 0b1110100 0b1101000 0b1101111 0b1101110 0b1000100 0b1100001 0b1111001 0b1111101'\n",
+        "\n",
+        "\n",
+        "flag2 = ''\n",
+        "for _ in c.split(' '):\n",
+        "   flag2 += chr(int(_,2))\n",
+        "    \n",
+        "flag2"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "14TkMom-kP_d",
+        "colab_type": "text"
+      },
+      "source": [
+        "###  Python 標準函式庫 (Standard Library)\n",
+        "\n",
+        "\n",
+        "C++ 有強大的標準模板庫(Standard Template Library，STL）\n",
+        "\n",
+        "Python也有強大的標準函式庫 (Standard Library)\n",
+        "\n",
+        "本課程示範幾個範例,帶你認識Python 標準函式庫"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "xr1RTV4RkUf5",
+        "colab_type": "text"
+      },
+      "source": [
+        "### 推薦書籍與資源\n",
+        "\n",
+        "```\n",
+        "[1]官方說明\n",
+        "英文 https://docs.python.org/3/library/\n",
+        "中文 https://docs.python.org/zh-tw/3/library/index.html\n",
+        "\n",
+        "[2]厚達上千頁的範例示範說明書\n",
+        "\n",
+        "The Python 3 Standard Library By Example\n",
+        "Doug Hellmann\n",
+        "\n",
+        "https://pymotw.com/3/\n",
+        "https://bitbucket.org/dhellmann/pymotw-3/src/master/\n",
+        "\n",
+        "```"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "m6NZSprqkjw-",
+        "colab_type": "text"
+      },
+      "source": [
+        "## Base 64 模組\n",
+        "\n",
+        "What does the 'b' character do in front of a string literal?\n",
+        "\n",
+        "https://stackoverflow.com/questions/6269765/what-does-the-b-character-do-in-front-of-a-string-literal"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "I75xeSnSktVA",
+        "colab_type": "text"
+      },
+      "source": [
+        "### 使用Base 64 模組編碼:b64encode()"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "n7O13HDtkvs4",
+        "colab_type": "code",
+        "outputId": "ab6c07b5-8c35-4f53-ca00-805e8683867c",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 52
+        }
+      },
+      "source": [
+        "import base64\n",
+        "\n",
+        "data =b'BreakAllCTF{HappyPythonDay}'\n",
+        "encoded_data = base64.b64encode(data)\n",
+        "print('Original Data :', data)\n",
+        "print('Encoded :', encoded_data)"
+      ],
+      "execution_count": 0,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "('Original Data :', 'BreakAllCTF{HappyPythonDay}')\n",
+            "('Encoded :', 'QnJlYWtBbGxDVEZ7SGFwcHlQeXRob25EYXl9')\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "rftjzrJak9Nn",
+        "colab_type": "text"
+      },
+      "source": [
+        "### 使用Base 64 模組解碼:b64decode()"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "JtaQEdkvlGow",
+        "colab_type": "code",
+        "outputId": "b2323e4e-871a-42f5-9261-8db719c264b3",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 52
+        }
+      },
+      "source": [
+        "import base64\n",
+        "\n",
+        "encoded_data = b'QnJlYWtBTExDVEZ7NTN1c1pRM2hXVzI1ZGNoWjdkWGV9'\n",
+        "decoded_data = base64.b64decode(encoded_data)\n",
+        "print('Encoded :', encoded_data)\n",
+        "print('Decoded :', decoded_data)"
+      ],
+      "execution_count": 0,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "('Encoded :', 'QnJlYWtBTExDVEZ7NTN1c1pRM2hXVzI1ZGNoWjdkWGV9')\n",
+            "('Decoded :', 'BreakALLCTF{53usZQ3hWW25dchZ7dXe}')\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "J2rjL-x0nCdZ",
+        "colab_type": "text"
+      },
+      "source": [
+        "### Base 32編碼與解碼"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "JTPkCIWnnGP8",
+        "colab_type": "code",
+        "outputId": "0bc76384-b22e-44ab-8c80-ffb861d772bf",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 70
+        }
+      },
+      "source": [
+        "import base64\n",
+        "\n",
+        "original_data = b'BreakAllCTF{HappyPythonDay}'\n",
+        "print('Original data:', original_data)\n",
+        "\n",
+        "encoded_data = base64.b32encode(original_data)\n",
+        "print('Encoded :', encoded_data)\n",
+        "\n",
+        "decoded_data = base64.b32decode(encoded_data)\n",
+        "print('Decoded :', decoded_data)"
+      ],
+      "execution_count": 0,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "('Original data:', 'BreakAllCTF{HappyPythonDay}')\n",
+            "('Encoded :', 'IJZGKYLLIFWGYQ2UIZ5UQYLQOB4VA6LUNBXW4RDBPF6Q====')\n",
+            "('Decoded :', 'BreakAllCTF{HappyPythonDay}')\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "WpSsHofKAO4Y",
+        "colab_type": "text"
+      },
+      "source": [
+        "## 使用Pyhon程式解Crytpo 101: Base64及Ｂase32哪兩題"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "3Cv-ndlrlSaA",
+        "colab_type": "text"
+      },
+      "source": [
+        "## Base 64 模組編碼與解碼趣味遊戲"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "POFEOeozll9C",
+        "colab_type": "text"
+      },
+      "source": [
+        "## Ｄoubly decoded\n",
+        "\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "UJVkpvXllRHl",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "import base64\n",
+        "\n",
+        "data =b'BreakAllCTF{HappyPythonDay}'\n",
+        "encoded_data = base64.b64encode(data)\n",
+        "encoded_data2 = base64.b64encode(encoded_data)\n",
+        "print('Original Data :', data)\n",
+        "print('Encoded :', encoded_data)\n",
+        "print('Doubly Encoded :', encoded_data2)\n",
+        "\n",
+        "decoded_data = base64.b64decode(encoded_data2)\n",
+        "result = base64.b64decode(decoded_data)\n",
+        "print(result)"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "gg6Aqeoyf8EG",
+        "colab_type": "text"
+      },
+      "source": [
+        "## 參考底下程式,完成 Crypto 101:Morse code\n",
+        "\n",
+        "Morse Code Translator In Python\n",
+        "\n",
+        "https://www.geeksforgeeks.org/morse-code-translator-python/"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "OcDZ4HvGf3CL",
+        "colab_type": "code",
+        "outputId": "9a3b060b-2c1d-493d-f2a4-a4b710d9d98e",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 51
+        }
+      },
+      "source": [
+        "# Python program to implement Morse Code Translator \n",
+        "  \n",
+        "''' \n",
+        "VARIABLE KEY \n",
+        "'cipher' -> 'stores the morse translated form of the english string' \n",
+        "'decipher' -> 'stores the english translated form of the morse string' \n",
+        "'citext' -> 'stores morse code of a single character' \n",
+        "'i' -> 'keeps count of the spaces between morse characters' \n",
+        "'message' -> 'stores the string to be encoded or decoded' \n",
+        "'''\n",
+        "  \n",
+        "# Dictionary representing the morse code chart \n",
+        "MORSE_CODE_DICT = { 'A':'.-', 'B':'-...', \n",
+        "                    'C':'-.-.', 'D':'-..', 'E':'.', \n",
+        "                    'F':'..-.', 'G':'--.', 'H':'....', \n",
+        "                    'I':'..', 'J':'.---', 'K':'-.-', \n",
+        "                    'L':'.-..', 'M':'--', 'N':'-.', \n",
+        "                    'O':'---', 'P':'.--.', 'Q':'--.-', \n",
+        "                    'R':'.-.', 'S':'...', 'T':'-', \n",
+        "                    'U':'..-', 'V':'...-', 'W':'.--', \n",
+        "                    'X':'-..-', 'Y':'-.--', 'Z':'--..', \n",
+        "                    '1':'.----', '2':'..---', '3':'...--', \n",
+        "                    '4':'....-', '5':'.....', '6':'-....', \n",
+        "                    '7':'--...', '8':'---..', '9':'----.', \n",
+        "                    '0':'-----', ', ':'--..--', '.':'.-.-.-', \n",
+        "                    '?':'..--..', '/':'-..-.', '-':'-....-', \n",
+        "                    '(':'-.--.', ')':'-.--.-'} \n",
+        "  \n",
+        "# Function to encrypt the string \n",
+        "# according to the morse code chart \n",
+        "def encrypt(message): \n",
+        "    cipher = '' \n",
+        "    for letter in message: \n",
+        "        if letter != ' ': \n",
+        "  \n",
+        "            # Looks up the dictionary and adds the \n",
+        "            # correspponding morse code \n",
+        "            # along with a space to separate \n",
+        "            # morse codes for different characters \n",
+        "            cipher += MORSE_CODE_DICT[letter] + ' '\n",
+        "        else: \n",
+        "            # 1 space indicates different characters \n",
+        "            # and 2 indicates different words \n",
+        "            cipher += ' '\n",
+        "  \n",
+        "    return cipher \n",
+        "  \n",
+        "# Function to decrypt the string \n",
+        "# from morse to english \n",
+        "def decrypt(message): \n",
+        "  \n",
+        "    # extra space added at the end to access the \n",
+        "    # last morse code \n",
+        "    message += ' '\n",
+        "  \n",
+        "    decipher = '' \n",
+        "    citext = '' \n",
+        "    for letter in message: \n",
+        "  \n",
+        "        # checks for space \n",
+        "        if (letter != ' '): \n",
+        "  \n",
+        "            # counter to keep track of space \n",
+        "            i = 0\n",
+        "  \n",
+        "            # storing morse code of a single character \n",
+        "            citext += letter \n",
+        "  \n",
+        "        # in case of space \n",
+        "        else: \n",
+        "            # if i = 1 that indicates a new character \n",
+        "            i += 1\n",
+        "  \n",
+        "            # if i = 2 that indicates a new word \n",
+        "            if i == 2 : \n",
+        "  \n",
+        "                 # adding space to separate words \n",
+        "                decipher += ' '\n",
+        "            else: \n",
+        "  \n",
+        "                # accessing the keys using their values (reverse of encryption) \n",
+        "                decipher += list(MORSE_CODE_DICT.keys())[list(MORSE_CODE_DICT \n",
+        "                .values()).index(citext)] \n",
+        "                citext = '' \n",
+        "  \n",
+        "    return decipher \n",
+        "  \n",
+        "# Hard-coded driver function to run the program \n",
+        "#def main(): \n",
+        "    \n",
+        "#message = \"BreakAllCTF{HappyPythonDay}\"\n",
+        "message = \"HappyPythonDay\"\n",
+        "result = encrypt(message.upper()) \n",
+        "print (result) \n",
+        "  \n",
+        "message = \".... .- .--. .--. -.-- .--. -.-- - .... --- -. -.. .- -.--\"\n",
+        "result = decrypt(message) \n",
+        "print (result) \n",
+        "  \n",
+        "# Executes the main function \n",
+        "#if __name__ == '__main__': \n",
+        "#    main() "
+      ],
+      "execution_count": 0,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            ".... .- .--. .--. -.-- .--. -.-- - .... --- -. -.. .- -.-- \n",
+            "HAPPYPYTHONDAY\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "B1UTn1SLq9aj",
+        "colab_type": "text"
+      },
+      "source": [
+        "# 編碼與解碼102"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "-zCa1u7w_TiG",
+        "colab_type": "text"
+      },
+      "source": [
+        "# angstromCTF 2016 : what-the-hex 20\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "9e2-rMl06gMZ",
+        "colab_type": "code",
+        "outputId": "72f7f815-8bc5-49ae-f362-61f73c6f84e9",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        }
+      },
+      "source": [
+        "'6236343a20615735305a584a755a58526659323975646d567963326c76626c3930623239736331397962324e72'.decode(\"hex\")"
+      ],
+      "execution_count": 0,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "'b64: aW50ZXJuZXRfY29udmVyc2lvbl90b29sc19yb2Nr'"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 19
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "Km-wXe382mkT",
+        "colab_type": "code",
+        "outputId": "c634fbfc-3efb-45df-a920-0970c2a03999",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        }
+      },
+      "source": [
+        "import base64\n",
+        "\n",
+        "'6236343a20615735305a584a755a58526659323975646d567963326c76626c3930623239736331397962324e72'.decode(\"hex\")"
+      ],
+      "execution_count": 0,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "'b64: aW50ZXJuZXRfY29udmVyc2lvbl90b29sc19yb2Nr'"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 7
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "nZv3VdOr2q-n",
+        "colab_type": "code",
+        "outputId": "6c195b0b-d19d-4033-83a9-707303fefaad",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        }
+      },
+      "source": [
+        "base64.b64decode('aW50ZXJuZXRfY29udmVyc2lvbl90b29sc19yb2Nr')"
+      ],
+      "execution_count": 0,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "'internet_conversion_tools_rock'"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 8
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "xKaD9jrL-3PB",
+        "colab_type": "text"
+      },
+      "source": [
+        "##  Python Built in Functions(內建的函數)\n",
+        "\n",
+        "\n",
+        "https://www.w3schools.com/python/python_ref_functions.asp\n",
+        "```\n",
+        "bin()\n",
+        "oct()\n",
+        "int()\n",
+        "hex()\n",
+        "```\n",
+        "### Python Program to Convert Decimal to Binary, Octal and Hexadecimal\n",
+        "\n",
+        "https://www.programiz.com/python-programming/examples/conversion-binary-octal-hexadecimal"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "IvvWqfAq_P1_",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "# Python program to convert decimal number into binary, octal and hexadecimal number system\n",
+        "\n",
+        "# Change this line for a different result\n",
+        "dec = 344\n",
+        "\n",
+        "print(\"The decimal value of\",dec,\"is:\")\n",
+        "print(bin(dec),\"in binary.\")\n",
+        "print(oct(dec),\"in octal.\")\n",
+        "print(hex(dec),\"in hexadecimal.\")"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "NFHVIpZK_fvD",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "# From https://www.programiz.com/python-programming/methods/built-in/int\n",
+        "\n",
+        "# binary 0b or 0B\n",
+        "print(\"For 1010, int is:\", int('1010', 2))\n",
+        "print(\"For 0b1010, int is:\", int('0b1010', 2))\n",
+        "\n",
+        "# octal 0o or 0O\n",
+        "print(\"For 12, int is:\", int('12', 8))\n",
+        "print(\"For 0o12, int is:\", int('0o12', 8))\n",
+        "\n",
+        "# hexadecimal\n",
+        "print(\"For A, int is:\", int('A', 16))\n",
+        "print(\"For 0xA, int is:\", int('0xA', 16))"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "10Z-56mLpMIB",
+        "colab_type": "text"
+      },
+      "source": [
+        "## Internetwache CTF 2016 : The hidden message"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "PPpiMCpbpUxi",
+        "colab_type": "text"
+      },
+      "source": [
+        "```\n",
+        "0000000 126 062 126 163 142 103 102 153 142 062 065 154 111 121 157 113\n",
+        "0000020 122 155 170 150 132 172 157 147 123 126 144 067 124 152 102 146\n",
+        "0000040 115 107 065 154 130 062 116 150 142 154 071 172 144 104 102 167\n",
+        "0000060 130 063 153 167 144 130 060 113 012\n",
+        "0000071\n",
+        "```"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "BxHfVjjppf3R",
+        "colab_type": "text"
+      },
+      "source": [
+        "## 第一種解法:使用線上工具解\n",
+        "\n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "rvmME2h8po2M",
+        "colab_type": "text"
+      },
+      "source": [
+        "步驟一：線上工具\n",
+        "\n",
+        "http://www.unit-conversion.info/texttools/octal/\n",
+        "\n",
+        "V2VsbCBkb25lIQoKRmxhZzogSVd7TjBfMG5lX2Nhbl9zdDBwX3kwdX0K"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "OJy_z-pKpzIf",
+        "colab_type": "text"
+      },
+      "source": [
+        "### 步驟二："
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "2usxAkwhpyag",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "import base64\n",
+        "\n",
+        "encoded_data = b'V2VsbCBkb25lIQoKRmxhZzogSVd7TjBfMG5lX2Nhbl9zdDBwX3kwdX0K'\n",
+        "decoded_data = base64.b64decode(encoded_data)\n",
+        "print('Encoded :', encoded_data)\n",
+        "print('Decoded :', decoded_data)"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "LoeQZNsUqA37",
+        "colab_type": "text"
+      },
+      "source": [
+        "## 第二種解法"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "U-cYBMBoqHYB",
+        "colab_type": "text"
+      },
+      "source": [
+        "### 先試看看是不是如你所想的一般......."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "xaqHWEdOqFhU",
+        "colab_type": "code",
+        "outputId": "27646b08-f8c1-4f8d-b64b-4b6d8e5f5436",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 52
+        }
+      },
+      "source": [
+        "#!/usr/bin/python\n",
+        "\n",
+        "c = '126 062 126 163 142 103 102 153 142 062 065 154 111 121 157 113 122 155 170 150 132 172 157 147 123 126 144 067 124 152 102 146 115 107 065 154 130 062 116 150 142 154 071 172 144 104 102 167 130 063 153 167 144 130 060 113 012'\n",
+        "\n",
+        "flag = \"\"\n",
+        "\n",
+        "for _ in c.split(' '):\n",
+        "  flag += chr(int(_,8))\n",
+        "\n",
+        "print(flag)"
+      ],
+      "execution_count": 0,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "V2VsbCBkb25lIQoKRmxhZzogSVd7TjBfMG5lX2Nhbl9zdDBwX3kwdX0K\n",
+            "\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "HKkc03Qwqa37",
+        "colab_type": "text"
+      },
+      "source": [
+        "## 接著就可以完成大業......"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "G2Aq1bqgqZTK",
+        "colab_type": "code",
+        "outputId": "822cb660-57dd-4d4d-c884-3f665e672cbe",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 87
+        }
+      },
+      "source": [
+        "#!/usr/bin/python\n",
+        "import base64\n",
+        "\n",
+        "c = '126 062 126 163 142 103 102 153 142 062 065 154 111 121 157 113 122 155 170 150 132 172 157 147 123 126 144 067 124 152 102 146 115 107 065 154 130 062 116 150 142 154 071 172 144 104 102 167 130 063 153 167 144 130 060 113 012'\n",
+        "\n",
+        "flag = \"\"\n",
+        "\n",
+        "for _ in c.split(' '):\n",
+        "  flag += chr(int(_,8))\n",
+        "  \n",
+        "\n",
+        "solution = base64.b64decode(flag)\n",
+        "print(solution)"
+      ],
+      "execution_count": 0,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "Well done!\n",
+            "\n",
+            "Flag: IW{N0_0ne_can_st0p_y0u}\n",
+            "\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "E43NVELsAsOr",
+        "colab_type": "text"
+      },
+      "source": [
+        "# SECCON CTF 2014: Easy Cipher \n",
+        "\n",
+        "https://github.com/S42X/CTF/blob/master/SECCON/EasyCipher.md"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "w_JOW3wm5_KG",
+        "colab_type": "code",
+        "outputId": "3ef7aa30-51ab-40c7-8339-538fb200097a",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        }
+      },
+      "source": [
+        "ord('a')\n"
+      ],
+      "execution_count": 0,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "97"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 13
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "FIut29yx_qrZ",
+        "colab_type": "code",
+        "outputId": "bcac3484-36b6-456b-c448-10b229a94566",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        }
+      },
+      "source": [
+        "oct(10)\n"
+      ],
+      "execution_count": 0,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "'012'"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 36
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "_BEunk04AY3E",
+        "colab_type": "code",
+        "outputId": "86d1d5ec-90ca-46aa-8de5-4be0c6ef1b04",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        }
+      },
+      "source": [
+        "hex(10)"
+      ],
+      "execution_count": 0,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "'0xa'"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 37
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "9wneMPSUvJqi",
+        "colab_type": "text"
+      },
+      "source": [
+        "https://www.quora.com/How-do-I-convert-hex-into-a-string-using-Python\n",
+        "\n",
+        "https://stackoverflow.com/questions/18806772/most-pythonic-way-to-convert-a-string-to-a-octal-number\n",
+        "\n",
+        "http://mini-stable.blogspot.com/2015/03/python-int-hex-char-string.html"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "Q4fpzzPLvjIJ",
+        "colab_type": "text"
+      },
+      "source": [
+        "### Python - int, hex, char, string的轉換\n",
+        "\n",
+        "```\n",
+        "Int to Hex:   hex(97)  # '0x61'\n",
+        "Int to Char:   chr(97)  # 'a'\n",
+        "Int to String:  str(97)  # '97'\n",
+        "Hex to int:  int('0x61', 16)  # 97\n",
+        "Hex to Char:   chr(int('0x61', 16)) # 'a'\n",
+        "Hex to String:\n",
+        "string = '61626364'\n",
+        "''.join(chr(int(string[i:i+2], 16)) for i in range(0, len(string), 2))  # 'abcd'\n",
+        "```\n",
+        "```\n",
+        "Char to Int: ord('a')  # 97\n",
+        "Char to Hex: hex(ord('a'))  # '0x61'\n",
+        "String to Int: int('97')  # 97\n",
+        "String to Hex:\n",
+        "\n",
+        "string = 'abcd'\n",
+        "''.join([hex(ord(x))[2:] for x in string])  # '61626364'\n",
+        "```"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "k5t_ONmlvH35",
+        "colab_type": "code",
+        "outputId": "0fddbe0f-6856-4f2d-9a0d-f492d4975dbc",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        }
+      },
+      "source": [
+        "string = '61626364'\n",
+        "''.join(chr(int(string[i:i+2], 16)) for i in range(0, len(string), 2))  # 'abcd'"
+      ],
+      "execution_count": 0,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "'abcd'"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 9
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "OBsLIEeiA_YW",
+        "colab_type": "text"
+      },
+      "source": [
+        "### binascii\n",
+        "\n",
+        "https://docs.python.org/2/library/binascii.html"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "rwK9MwzkAbA3",
+        "colab_type": "code",
+        "outputId": "0a6b2ced-7622-4664-acc3-5a97cc6def09",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 51
+        }
+      },
+      "source": [
+        "#coding:utf-8\n",
+        "import binascii\n",
+        "a = 'HappyCTF{Useful tools binascii}'\n",
+        "b = binascii.b2a_hex(a)\n",
+        "print b\n",
+        "print binascii.a2b_hex(b)\n"
+      ],
+      "execution_count": 0,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "48617070794354467b55736566756c20746f6f6c732062696e61736369697d\n",
+            "HappyCTF{Useful tools binascii}\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "N7behAva-dyg",
+        "colab_type": "text"
+      },
+      "source": [
+        "binascii\n",
+        "\n",
+        "binascii.unhexlify"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "SUw5YCgv4xob",
+        "colab_type": "code",
+        "outputId": "728645d9-0113-4dfc-8832-1efaff226cf9",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 54
+        }
+      },
+      "source": [
+        "#!/usr/bin/python\n",
+        "import binascii\n",
+        "\n",
+        "c = '87 101 108 1100011 0157 6d 0145 040 116 0157 100000 0164 104 1100101 32 0123 69 67 0103 1001111 \\\n",
+        "     1001110 040 062 060 49 064 100000 0157 110 6c 0151 1101110 101 040 0103 1010100 70 101110 0124 \\\n",
+        "     1101000 101 100000 1010011 1000101 67 0103 4f 4e 100000 105 1110011 040 116 1101000 0145 040 \\\n",
+        "     1100010 0151 103 103 0145 1110011 0164 100000 1101000 0141 99 6b 1100101 0162 32 0143 111 1101110\\\n",
+        "     1110100 101 0163 0164 040 0151 0156 040 74 0141 1110000 1100001 0156 056 4f 0157 0160 115 44 040\\\n",
+        "     0171 1101111 117 100000 1110111 0141 0156 1110100 32 0164 6f 32 6b 1101110 1101111 1110111 100000\\\n",
+        "     0164 1101000 0145 040 0146 6c 97 1100111 2c 100000 0144 111 110 100111 116 100000 1111001 6f 117\\\n",
+        "     63 0110 1100101 0162 0145 100000 1111001 111 117 100000 97 114 0145 46 1010011 0105 0103 67 79\\\n",
+        "     1001110 123 87 110011 110001 67 110000 1001101 32 55 060 100000 110111 0110 110011 32 53 51 0103\\\n",
+        "     0103 060 0116 040 5a 0117 73 0101 7d 1001000 0141 1110110 1100101 100000 102 0165 0156 33'\n",
+        "     \n",
+        "flag = \"\"\n",
+        "for _ in c.split(' '):\n",
+        "  if len(_) == 2 and _[1:].isalpha(): #HEX\n",
+        "    flag += _.decode('hex')\n",
+        "  if (len(_) == 2 and not _[1:].isalpha()) or (len(_) == 3 and int(_[0]) != 0): #DEC\n",
+        "    flag += chr(int(_))\n",
+        "  if len(_) == 4 or (len(_) == 3 and int(_[0]) == 0) : #OCT\n",
+        "    flag += chr(int(_, 8))\n",
+        "  if len(_) > 4: #BIN\n",
+        "    flag += binascii.unhexlify('%x' % int(_,2))\n",
+        "print(flag)"
+      ],
+      "execution_count": 0,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "Welcome to the SECCON 2014 online CTF.The SECCON is the biggest hacker contest in Japan.Oops, you want to know the flag, don't you?Here you are.SECCON{W31C0M 70 7H3 53CC0N ZOIA}Have fun!\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "IU8tKuYYmJ5b",
+        "colab_type": "text"
+      },
+      "source": [
+        "# 自主學習主題"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "BFJFnnUVmwnG",
+        "colab_type": "text"
+      },
+      "source": [
+        "## alexctf-2017: CR1: Ultracoded 50\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "8X4FOdQpm3-p",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "! wget https://raw.githubusercontent.com/ctfs/write-ups-2017/master/alexctf-2017/cryptography/cr1-ultracoded-50/zero_one"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "VxGsAl4UomIr",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "!pip install pwntools"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "Yx7Ehs2iopD4",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "!pip install morse_talk"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "GjrG95MdotBB",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "#!/usr/bin/env python\n",
+        "\n",
+        "import binascii\n",
+        "import base64\n",
+        "import morse_talk as mtalk\n",
+        "\n",
+        "with open('./zero_one', 'r') as content_file:\n",
+        "    bin_text = content_file.read()\n",
+        "\n",
+        "bin_text = bin_text.replace(\"ZERO\",\"0\")\n",
+        "bin_text = bin_text.replace(\"ONE\",\"1\")\n",
+        "bin_text = bin_text.replace(\" \",\"\")\n",
+        "bin_text = bin_text.strip()\n",
+        "\n",
+        "print \"Binary : \"+ bin_text\n",
+        "b64 = ''.join(chr(int(bin_text[i:i+8], 2)) for i in range(0, len(bin_text), 8))\n",
+        "print \"Base 64 : \"+ b64\n",
+        "print \"morse : \" + base64.b64decode(b64).decode('utf-8')"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "SokutaBAowSC",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "mtalk.decode(base64.b64decode(b64).decode('utf-8'))"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "NobH5pfWmNOg",
+        "colab_type": "text"
+      },
+      "source": [
+        "## easyctf-2017: Decode Me - 100 points\n",
+        "\n",
+        "Someone I met today told me that they had a perfect encryption method. To prove that there is no such thing, I want you to decrypt this encrypted flag he gave me.\n",
+        "\n",
+        "附檔已整理在\n",
+        "\n",
+        "https://raw.githubusercontent.com/easyctf/easyctf-2017-problems/master/decode-me/encrypted_flag.txt"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "X1tOcRJOmRjn",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "!wget https://raw.githubusercontent.com/easyctf/easyctf-2017-problems/master/decode-me/encrypted_flag.txt"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "JcvaXXmpmThT",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "!cat encrypted_flag.txt"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "_c3SvTk5mVdh",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "import base64\n",
+        "\n",
+        "a = open('encrypted_flag.txt').read()\n",
+        "a"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "az15diismXu_",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "import base64\n",
+        "\n",
+        "a = open('encrypted_flag.txt').read()\n",
+        "a = a.replace('\\n','').replace('\\\\n','')\n",
+        "b64 = str(base64.standard_b64decode(a),'utf-8')\n",
+        "\n",
+        "b64"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "lSdjsTQCmZ5r",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "import base64\n",
+        "\n",
+        "a = open('encrypted_flag.txt').read()\n",
+        "a = a.replace('\\n','').replace('\\\\n','')\n",
+        "b64 = str(base64.standard_b64decode(a),'utf-8')\n",
+        "\n",
+        "while 'easyctf' not in b64:\n",
+        "    b64 = str(base64.standard_b64decode(b64),'utf-8')\n",
+        "print(b64)"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "LeWS1mHSmcSB",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "import base64\n",
+        "\n",
+        "a = open('encrypted_flag.txt').read()\n",
+        "a = a.replace('\\n','').replace('\\\\n','')\n",
+        "b64 = str(base64.standard_b64decode(a),'utf-8')\n",
+        "\n",
+        "\n",
+        "b64_2 = str(base64.standard_b64decode(b64),'utf-8')\n",
+        "\n",
+        "b64_3 = str(base64.standard_b64decode(b64),'utf-8')\n",
+        "print(b64_3)"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    }
+  ]
+}
