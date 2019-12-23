@@ -1,11 +1,11 @@
-public class ArrayPractice {
+#public class ArrayPractice {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
 		String test_string="winter vacation";
 		String chinsese_string="本校初籌於民國五十三年十月，在創辦人李正合先生及其夫人閔蓉蓉女士大力奔走下，擇地於台南縣永康市大灣里即古稱「鯽魚潭」故址，從一片荒蕪中，篳路藍縷、胼手胝足，用心灌溉教育，於民國五十四年四月二十九日創校。";
-		String[]token= test_string.split("");
+		String[]token= test_string.split(" ");
 		String[]token_cni= chinsese_string.split("，");
 		
 		for( int i = 0 ; i< token.length  ; i++ ) {
@@ -17,4 +17,14 @@ public class ArrayPractice {
 	}
 
 }
-
+````
+winter
+vacation
+本校初籌於民國五十三年十月
+在創辦人李正合先生及其夫人閔蓉蓉女士大力奔走下
+擇地於台南縣永康市大灣里即古稱「鯽魚潭」故址
+從一片荒蕪中
+篳路藍縷、胼手胝足
+用心灌溉教育
+於民國五十四年四月二十九日創校。
+````
